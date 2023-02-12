@@ -1,0 +1,70 @@
+{
+	"parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+	"extends": [
+		//"next/core-web-vitals",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:prettier/recommended",
+		"plugin:import/recommended",
+		"prettier"
+	],
+	"plugins": ["unused-imports"],
+	"parserOptions": {
+		"ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+		"sourceType": "module" // Allows for the use of imports
+	},
+	"rules": {
+		// Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"import/no-default-export": "error",
+		"import/no-unresolved": "off",
+		"import/no-named-as-default": "off",
+		"import/no-named-as-default-member": "off",
+		"no-html-link-for-pages": "off",
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{
+				"vars": "all",
+				"varsIgnorePattern": "^_",
+				"args": "after-used",
+				"argsIgnorePattern": "^_"
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": ["./apps/nextjs/src/pages/**/*", "./internal-packages/emails/emails/**/*"],
+			"rules": {
+				"import/no-default-export": "off"
+			}
+		}
+	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/ignore": ["react-native"],
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+
+				// use an array
+				"project": [
+					"packages/*/tsconfig.json",
+					"apps/*/tsconfig.json",
+					"internal-packages/*/tsconfig.json"
+				]
+			}
+		}
+	}
+}

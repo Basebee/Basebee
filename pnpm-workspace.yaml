@@ -1,7 +1,11 @@
 packages:
-  - apps/expo
-  - apps/nextjs
-  - packages/api
-  - packages/auth
-  - packages/db
-  - packages/config/*
+    - apps/runtime
+    - apps/example-site
+    - core-packages/api
+    - core-packages/auth
+    - core-packages/db
+    - core-packages/emails
+    - core-packages/config/*
+    - packages/adapter-next
+    - packages/adapter-react
+    - packages/client

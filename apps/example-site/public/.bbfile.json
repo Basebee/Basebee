@@ -1,0 +1,24 @@
+{
+	"bbfile": "1.0",
+	"version": "1.0",
+	"previewPath": "/basebee",
+	"components": [
+		{
+			"file": "/src/components/Button.jsx",
+			"name": "Button",
+			"description": "A button component",
+			"props": [
+				{
+					"name": "href",
+					"type": "string",
+					"component": "text-input",
+					"componentOptions": {
+						"label": "Link"
+					},
+					"required": true,
+					"description": "Where the button links to."
+				}
+			]
+		}
+	]
+}
